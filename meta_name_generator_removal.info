@@ -1,0 +1,6 @@
+name = Meta Name Generator Removal
+description = Allows the administrator to remove the html meta tag name generator.
+core = 7.x
+package = Meta Name Generator Removal
+version = 0.1
+configure = admin/config/search/meta_name_generator_removal
