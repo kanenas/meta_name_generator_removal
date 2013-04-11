@@ -1,0 +1,44 @@
+<?php
+/**
+ * @file
+ *   Remove the meta tag name generator <meta name="Generator" content="Drupal 7 (http://drupal.org)"/>.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function meta_name_generator_removal_menu() {
+  $items = array();
+  $items['admin/config/search/meta_name_generator_removal'] = array(
+    'title' => 'Meta name generator removal settings',
+    'description' => 'Administer Meta Name Generator Removal Setting.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('meta_name_generator_removal_admin_settings_form'),
+    'access arguments' => array('manage meta_name_generator_removal settings'),
+    'file' => 'meta_name_generator_removal.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permissions().
+ */
+function meta_name_generator_removal_permission() {
+  $perm = array(
+    'manage meta_name_generator_removal settings' => array(
+      'title' => t('Manage Meta Name Generator Removal'),
+    ),
+    'manage meta_name_generator_removal settings' => array(
+      'description' => t('Remove the html meta tag name generator'),
+    ),
+  );
+  return $perm;
+}
+
+/**
+ * Implements hook_html_head_alter().
+ */
+function meta_name_generator_removal_html_head_alter(&$head_elements) {
+  // Remove the default generator meta tag from the head of Drupal 7
+  unset($head_elements['system_meta_generator']);
+}
