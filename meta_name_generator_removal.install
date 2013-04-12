@@ -2,3 +2,7 @@
 /******************************************************************************
  * Creating the meta_name_generator_removal.install File 
  *****************************************************************************/
+/**
+* @file
+*   Defines and manages the meta_name_generator_removal schema.
+*/
