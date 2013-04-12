@@ -26,10 +26,8 @@ function meta_name_generator_removal_menu() {
 function meta_name_generator_removal_permission() {
   $perm = array(
     'manage meta_name_generator_removal settings' => array(
-      'title' => t('Manage Meta Name Generator Removal'),
-    ),
-    'manage meta_name_generator_removal settings' => array(
-      'description' => t('Remove the html meta tag name generator'),
+      'title' => t('Remove the html meta tag name generator'),
+      'description' => t('Warning: Please allow only admins to use this module!'),
     ),
   );
   return $perm;
